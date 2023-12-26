@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  background-color: #080708;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h1 {
+  color: white;
+  background-color: #3772ff;
+  border-radius: 10px;
+  padding: 1.2rem 2.4rem;
+}
+.container {
+  background-color: #9ab7f9;
+  padding: 1.2rem 2.4rem;
+  border-radius: 20px;
+  width: 35vw;
+  height: 30rem;
+}
+form {
+  margin-top: 2rem;
+}
+
+form select,
+button,
+input {
+  width: 100%;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+}
+form input {
+  height: 3rem;
+  padding: 0.2rem 0.2rem;
+  text-align: center;
+
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  margin-top: 0.3rem;
+}
+label {
+  font-size: 1.4em;
+  color: black;
+  font-weight: bold;
+}
+.dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+.select-container img {
+  scale: 1.2;
+}
+select {
+  height: 1.2rem;
+  font-size: 1rem;
+}
+.dropdown i {
+  scale: 1.2;
+}
+.sub-btn {
+  margin-top: 1rem;
+  width: 15rem;
+  padding: 1rem 1.2rem;
+  font-size: 1rem;
+  font-weight: bolder;
+  cursor: pointer;
+  background-color: #fdca40;
+}
+.exchange-info {
+  background-color: #ef9399;
+  padding: 0.4rem;
+  border-radius: 10px;
+}

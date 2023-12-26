@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik Doodle Shadow", sans-serif;
+}
+body {
+  background-color: #cae5ff;
+  text-align: center;
+}
+h1 {
+  font-size: 3.2rem;
+  margin-top: 1.2rem;
+}
+.container {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.game {
+  height: 60vmin;
+  width: 60vmin;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5vmin;
+}
+.box {
+  height: 18vmin;
+  width: 18vmin;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.09);
+  color: #615d6c;
+  font-size: 3rem;
+  background-color: #f1f8ff;
+}
+.reset-btn {
+  width: 15rem;
+  font-size: 1.2rem;
+  padding: 1.2rem 2.4rem;
+  margin: 1.2rem auto;
+  font-family: "Rubik", sans-serif;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: #232324;
+  color: #cae5ff;
+  font-weight: 600;
+  transition: all ease 0.3s;
+}
+.reset-btn:hover {
+  background-color: #575758;
+  color: #f1f8ff;
+}
+.new-game-btn {
+  width: 15rem;
+  font-size: 1.2rem;
+  padding: 1.2rem 2.4rem;
+  margin: 1.2rem auto;
+  font-family: "Rubik", sans-serif;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: #232324;
+  color: #cae5ff;
+  font-weight: 600;
+  transition: all ease 0.3s;
+}
+.new-game-btn:hover {
+  background-color: #575758;
+  color: #f1f8ff;
+}
+#winner-msg {
+  font-family: "Rubik", sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  color: #34373a;
+}
+.msg {
+  margin-top: 1.2rem;
+}
+.hide {
+  display: none;
+}
