@@ -14,7 +14,7 @@ body {
 }
 .container {
   height: 70vh;
-  width: 80vw;
+  width: 90vw;
   background-color: aliceblue;
   border-radius: 10px;
   box-shadow: 0 10px 15px rgba(0, 0, 255, 0.4);
