@@ -3,8 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Verdana", Geneva, Tahoma, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,32 +13,85 @@ body {
   text-align: center;
   background: linear-gradient(to right, #ff69b4, #0000ff);
 }
+
 .container {
-  height: 70vh;
-  width: 90vw;
+  width: 90%;
+  max-width: 800px; /* Limit max width for larger screens */
   background-color: aliceblue;
   border-radius: 10px;
   box-shadow: 0 10px 15px rgba(0, 0, 255, 0.4);
-  padding: 1.2rem 2.4rem;
+  padding: 1.5rem;
 }
+
+h1 {
+  margin-bottom: 1.5rem;
+}
+
 .projects-container {
   display: flex;
+  flex-wrap: wrap; /* Allow items to wrap */
   justify-content: center;
   align-items: center;
-  gap: 3rem;
-  margin-top: 3rem;
+  gap: 2rem; /* Space between items */
 }
+
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 150px; /* Limit width of each project box */
+  transition: transform 0.3s; /* Add transition for hover effects */
+}
+
 img {
-  height: 15rem;
-  width: 15rem;
+  width: 100%; /* Full width of the container */
+  height: auto; /* Maintain aspect ratio */
   border-radius: 20px;
   cursor: pointer;
-  transition: all ease 0.3s;
 }
-img:hover {
-  scale: 1.1;
-  box-shadow: 0 10px 15px rgba(0, 0, 255, 0.4);
-}
+
 h3 {
-  margin-top: 2rem;
+  margin-top: 0.5rem;
+}
+
+/* Hover effect on project boxes */
+.project:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .container {
+    width: 90vw; /* Full width on smaller screens */
+  }
+
+  img {
+    max-width: 120px; /* Limit image size */
+  }
+
+  h1 {
+    font-size: 1.8rem; /* Adjust heading size */
+  }
+
+  h3 {
+    font-size: 1.1rem; /* Adjust heading size */
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-container {
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  img {
+    max-width: 100px; /* Further reduce image size */
+  }
+
+  h1 {
+    font-size: 1.5rem; /* Smaller title font size */
+  }
+
+  h3 {
+    font-size: 1rem; /* Smaller heading font size */
+  }
 }
