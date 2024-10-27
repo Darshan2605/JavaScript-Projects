@@ -1,11 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  font-family: "rubik" sans-serif;
+  font-family: "Rubik", sans-serif;
   height: 100vh;
   text-align: center;
   display: flex;
@@ -13,15 +15,18 @@ body {
   align-items: center;
   background-color: black;
 }
+
 .container {
-  width: 35vw;
-  height: 80vh;
+  width: 90%; /* Use percentage for responsiveness */
+  max-width: 500px; /* Set a max width for larger screens */
+  height: auto; /* Allow height to adjust based on content */
   background: linear-gradient(145deg, #3d93ef, #dac61a);
   border-radius: 20px;
-  padding: 1.5rem 1.5rem;
+  padding: 1.5rem;
   box-shadow: 0 8px 50px 3px rgba(39, 39, 39, 0.3),
     0 6px 20px 0 rgba(0, 0, 0, 0.5);
 }
+
 .transperent {
   height: 100%;
   width: 100%;
@@ -29,10 +34,19 @@ body {
   background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(100px);
   z-index: 3;
-  padding: 1rem 1rem;
+  padding: 1rem;
 }
+
+.search-box {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the items */
+}
+
 .search-box input {
-  width: 70%;
+  flex: 1; /* Allow input to grow */
+  max-width: 70%; /* Set a maximum width to prevent overflow */
   height: 3rem;
   border: none;
   outline: none;
@@ -41,39 +55,62 @@ body {
   color: white;
   font-size: 1.2rem;
   font-weight: 600;
-  margin-left: 0.5rem;
+  margin-right: 0.5rem; /* Space between input and button */
   letter-spacing: 0.5px;
+  padding: 0 1rem; /* Add padding for better text alignment */
 }
+
 .search-box i {
-  margin-right: 1rem;
   font-size: 1.8rem;
   cursor: pointer;
+  height: 3rem; /* Ensure button height matches input */
+  display: flex; /* Center the icon vertically */
+  align-items: center; /* Center icon vertically */
 }
-.search-box {
-  margin-top: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
+
 .weather-info {
   display: flex;
   flex-direction: column;
+  align-items: center; /* Center align items */
 }
+
 .weather-img {
-  height: 20rem;
-  width: 20rem;
-  margin: 0 auto;
+  height: auto; /* Allow height to adjust based on content */
+  width: 40%; /* Make the image responsive */
+  max-width: 20rem; /* Set a max width for larger screens */
+  margin: 1rem 0; /* Add some vertical spacing */
 }
+
 .weather-condition {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center align items */
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 .temperature {
   font-size: 5rem;
 }
+
 .city {
   font-size: 1.8rem;
+}
+
+/* Media Queries for Further Responsiveness */
+@media (max-width: 600px) {
+  .temperature {
+    font-size: 4rem; /* Reduce font size on smaller screens */
+  }
+
+  .city {
+    font-size: 1.5rem; /* Reduce font size on smaller screens */
+  }
+
+  .weather-img {
+    width: 60%; /* Increase image size on smaller screens */
+  }
+
+  .search-box input {
+    max-width: 80%; /* Allow input to take more space on smaller screens */
+  }
 }
