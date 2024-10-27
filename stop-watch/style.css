@@ -1,21 +1,24 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; /* Ensure padding and margin do not affect width */
 }
+
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color: black;
+  background: linear-gradient(#aadd55, #4e9258);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   text-align: center;
-  background: linear-gradient(#aadd55, #4e9258);
 }
+
 .container {
   background-color: aliceblue;
   height: 30vh;
   width: 30vw;
+  max-width: 400px; /* Limit max width for larger screens */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,27 +26,50 @@ body {
   gap: 2rem;
   border-radius: 10px;
   box-shadow: 0px 10px 20px 3px rgba(74, 146, 88, 1);
+  padding: 1rem; /* Add padding for better spacing */
 }
+
 .display-time {
   width: 100%;
   font-weight: bolder;
   font-size: 2.4rem;
 }
+
+.btns {
+  display: flex;
+  justify-content: center; /* Center the buttons */
+  gap: 0.5rem; /* Space between buttons */
+}
+
 .timer-btn {
-  width: 5rem;
-  padding: 1rem 1rem;
+  flex: 1; /* Allow buttons to take equal width */
+  max-width: 120px; /* Limit max width for buttons */
+  padding: 1rem;
   border-radius: 30px;
   border: none;
   cursor: pointer;
-  margin-right: 0.9rem;
   box-shadow: 0px 5px 15px rgba(74, 146, 88, 0.7);
   font-size: 1.1rem;
   font-weight: bold;
   transition: all ease 0.3s;
 }
-.timer-btn:last-child {
-  margin-right: 0;
-}
+
 .timer-btn:hover {
   background-color: #76a770;
+}
+
+/* Media Queries for Further Responsiveness */
+@media (max-width: 600px) {
+  .container {
+    width: 80vw; /* Make the container responsive on smaller screens */
+    height: 40vh; /* Adjust height on smaller screens */
+  }
+
+  .display-time {
+    font-size: 2rem; /* Smaller font size for the display time */
+  }
+
+  .timer-btn {
+    font-size: 1rem; /* Smaller button font size */
+  }
 }
