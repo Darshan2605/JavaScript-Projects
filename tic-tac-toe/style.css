@@ -1,60 +1,59 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   font-family: "Rubik Doodle Shadow", sans-serif;
 }
+
 body {
   background-color: #cae5ff;
   text-align: center;
 }
+
 h1 {
   font-size: 3.2rem;
   margin-top: 1.2rem;
 }
+
 .container {
   height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .game {
-  height: 60vmin;
-  width: 60vmin;
+  height: 60vmin; /* Makes the game container responsive */
+  width: 60vmin; /* Makes the game container responsive */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 1.5vmin;
+  gap: 1.5vmin; /* Space between boxes */
 }
+
 .box {
-  height: 18vmin;
-  width: 18vmin;
+  height: 18vmin; /* Responsive size based on viewport */
+  width: 18vmin; /* Responsive size based on viewport */
   border-radius: 10px;
   box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.09);
   color: #615d6c;
   font-size: 3rem;
   background-color: #f1f8ff;
+  border: none; /* No border for buttons */
+  cursor: pointer; /* Pointer cursor for buttons */
+  transition: background-color 0.3s; /* Smooth background change */
 }
-.reset-btn {
-  width: 15rem;
-  font-size: 1.2rem;
-  padding: 1.2rem 2.4rem;
-  margin: 1.2rem auto;
-  font-family: "Rubik", sans-serif;
-  border-radius: 20px;
-  cursor: pointer;
-  background-color: #232324;
-  color: #cae5ff;
-  font-weight: 600;
-  transition: all ease 0.3s;
+
+.box:hover {
+  background-color: #d9e7ff; /* Change background color on hover */
 }
-.reset-btn:hover {
-  background-color: #575758;
-  color: #f1f8ff;
-}
+
+.reset-btn,
 .new-game-btn {
-  width: 15rem;
+  width: 80%; /* Responsive width */
+  max-width: 15rem; /* Limit max width */
   font-size: 1.2rem;
   padding: 1.2rem 2.4rem;
   margin: 1.2rem auto;
@@ -66,19 +65,46 @@ h1 {
   font-weight: 600;
   transition: all ease 0.3s;
 }
+
+.reset-btn:hover,
 .new-game-btn:hover {
   background-color: #575758;
   color: #f1f8ff;
 }
+
 #winner-msg {
   font-family: "Rubik", sans-serif;
   font-weight: 600;
   font-size: 2rem;
   color: #34373a;
 }
+
 .msg {
   margin-top: 1.2rem;
 }
+
 .hide {
   display: none;
+}
+
+/* Media Queries for Further Responsiveness */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.5rem; /* Adjust title font size on small screens */
+  }
+
+  .box {
+    height: 15vmin; /* Smaller boxes on small screens */
+    width: 15vmin; /* Smaller boxes on small screens */
+    font-size: 2.5rem; /* Smaller font size for boxes */
+  }
+
+  .reset-btn,
+  .new-game-btn {
+    width: 90%; /* Make buttons wider on smaller screens */
+  }
+
+  #winner-msg {
+    font-size: 1.5rem; /* Smaller winner message font size */
+  }
 }
