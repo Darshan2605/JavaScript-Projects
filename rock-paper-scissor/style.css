@@ -4,12 +4,14 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
 }
+
 h1 {
   background-color: #003049;
   padding: 1.2rem 2.4rem;
   color: #fdf0d5;
   box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.2);
 }
+
 .choises {
   display: flex;
   justify-content: center;
@@ -18,6 +20,7 @@ h1 {
   margin-top: 5rem;
   margin-bottom: 5rem;
 }
+
 .choise {
   height: 200px;
   width: 200px;
@@ -30,15 +33,18 @@ h1 {
   transition: all ease 0.3s;
   box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.1);
 }
+
 .choise:hover {
   scale: 1.1;
   box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.05);
   background-color: rgb(186, 192, 197);
 }
+
 img {
   height: 100px;
   width: 100px;
 }
+
 .score-board {
   display: flex;
   justify-content: center;
@@ -46,16 +52,19 @@ img {
   gap: 4rem;
   font-size: 1.8rem;
 }
+
 #user-score,
 #computer-score {
   font-size: 3rem;
   font-weight: 600;
 }
+
 .msg-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .msg {
   margin-top: 2rem;
   background-color: #009cea;
@@ -70,4 +79,52 @@ img {
   color: #ffffff;
   font-weight: 600;
   box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .choises {
+    gap: 3rem; /* Adjust gap for smaller screens */
+    flex-wrap: wrap; /* Allow items to wrap */
+  }
+
+  .choise {
+    height: 150px; /* Smaller height for buttons */
+    width: 150px; /* Smaller width for buttons */
+  }
+
+  .score-board {
+    gap: 2rem; /* Adjust gap between scores */
+  }
+
+  .msg {
+    width: 80%; /* Responsive width */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem; /* Smaller font size for heading */
+    padding: 1rem; /* Adjust padding */
+  }
+
+  .choises {
+    margin-top: 3rem; /* Reduced margin */
+    margin-bottom: 3rem; /* Reduced margin */
+  }
+
+  .choise {
+    height: 120px; /* Further reduced height */
+    width: 120px; /* Further reduced width */
+  }
+
+  #user-score,
+  #computer-score {
+    font-size: 2.5rem; /* Smaller score font size */
+  }
+
+  .msg {
+    font-size: 1.5rem; /* Smaller font size for message */
+    width: 90%; /* More responsive width */
+  }
 }
