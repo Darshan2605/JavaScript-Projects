@@ -2,28 +2,32 @@
   margin: 0;
   padding: 0;
 }
+
 body {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
   text-align: center;
-  height: 100vh;
+  height: 100vh; /* Full viewport height */
   background-color: #080708;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 h1 {
   color: white;
   background-color: #3772ff;
   border-radius: 10px;
   padding: 1.2rem 2.4rem;
 }
+
 .container {
   background-color: #9ab7f9;
   padding: 1.2rem 2.4rem;
   border-radius: 20px;
-  width: 35vw;
-  height: 30rem;
+  width: 35vw; /* Width of the container */
+  height: auto; /* Height set to auto for flexibility */
 }
+
 form {
   margin-top: 2rem;
 }
@@ -36,37 +40,43 @@ input {
   outline: none;
   border: none;
 }
+
 form input {
   height: 3rem;
   padding: 0.2rem 0.2rem;
   text-align: center;
-
   font-size: 1.4rem;
   font-weight: 600;
   margin-bottom: 1rem;
   margin-top: 0.3rem;
 }
+
 label {
   font-size: 1.4em;
   color: black;
   font-weight: bold;
 }
+
 .dropdown {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 3rem;
 }
+
 .select-container img {
   scale: 1.2;
 }
+
 select {
   height: 1.2rem;
   font-size: 1rem;
 }
+
 .dropdown i {
   scale: 1.2;
 }
+
 .sub-btn {
   margin-top: 1rem;
   width: 15rem;
@@ -76,8 +86,58 @@ select {
   cursor: pointer;
   background-color: #fdca40;
 }
+
 .exchange-info {
   background-color: #ef9399;
   padding: 0.4rem;
   border-radius: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .container {
+    width: 80vw; /* Increase container width on smaller screens */
+    padding: 1rem; /* Adjust padding */
+  }
+
+  h1 {
+    font-size: 1.8rem; /* Smaller font size for heading */
+    padding: 1rem; /* Adjust padding */
+  }
+
+  form input {
+    height: 2.5rem; /* Smaller input height */
+    font-size: 1.2rem; /* Smaller font size */
+  }
+
+  .sub-btn {
+    width: 100%; /* Full width for button */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem; /* Further smaller font size for heading */
+    padding: 0.8rem; /* Further adjust padding */
+  }
+
+  form input {
+    height: 2rem; /* Further smaller input height */
+  }
+
+  .dropdown {
+    flex-direction: column; /* Stack dropdowns vertically */
+  }
+
+  .dropdown i {
+    margin: 0.5rem 0; /* Add spacing around the arrow icon */
+  }
+
+  .sub-btn {
+    padding: 0.8rem; /* Adjust padding for button */
+  }
+
+  .exchange-info {
+    font-size: 1rem; /* Adjust font size for exchange info */
+  }
 }

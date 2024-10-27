@@ -1,5 +1,4 @@
-const APIURL =
-  "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies";
+const APIURL = "https://api.exchangerate-api.com/v4/latest"; // Change to the new API
 
 const dropdown = document.querySelectorAll(".dropdown select");
 let fromCurr = document.querySelector(".from select");
@@ -20,8 +19,7 @@ for (let select of dropdown) {
     select.append(options);
   }
   select.addEventListener("change", function selectChanged(evt) {
-    //evt is event object
-    updateFlag(evt.target); //evt.target means where change happend(on select element)
+    updateFlag(evt.target);
   });
 }
 
@@ -29,7 +27,7 @@ function updateFlag(element) {
   let Currencycode = element.value;
   let CountryCode = countryList[Currencycode];
   let newImg = `https://flagsapi.com/${CountryCode}/flat/64.png`;
-  let countryImg = element.parentElement.querySelector("img"); //here element is select,parent of select is select-container div
+  let countryImg = element.parentElement.querySelector("img");
   countryImg.src = newImg;
 }
 
@@ -37,24 +35,39 @@ const exbtn = document.querySelector(".sub-btn");
 
 exbtn.addEventListener("click", async function exchangeCurrency(evt) {
   evt.preventDefault();
-  /*
-  The use of event.preventDefault() is to stop the default action of an element from happening.
-  In this case, it stops the form being submitted when we click on the submit button.
-  if we click on form submit button,form get submitted,page get reloaded and form goes to default state
-  by using this function this tasks never get executed.*/
 
   let amount = document.querySelector("form input");
   let amountValue = amount.value;
   if (amountValue == "" || amountValue < 1) {
-    amountValue = 1; //for js variable
-    amount.value = 1; // inside form
+    amountValue = 1;
+    amount.value = 1;
   }
 
-  const exchangeURL = `${APIURL}/${fromCurr.value.toLowerCase()}/${toCurr.value.toLowerCase()}.json`;
+  const exchangeURL = `${APIURL}/${fromCurr.value.toLowerCase()}`; // New API URL
+  console.log("Exchange URL:", exchangeURL);
 
-  let response = await fetch(exchangeURL);
-  let readableData = await response.json();
-  let exchangeRate = readableData[toCurr.value.toLowerCase()]; //redable data give us exchange rate of country selected in toCurr select option
-  let finalAmount = exchangeRate * amountValue;
-  exchangeInfo.innerText = `${amountValue} ${fromCurr.value} = ${finalAmount} ${toCurr.value}`;
+  try {
+    let response = await fetch(exchangeURL);
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    let readableData = await response.json();
+
+    // Get the exchange rate for the selected currencies
+    let exchangeRate = readableData.rates[toCurr.value]; // Accessing rates for the target currency
+
+    if (exchangeRate === undefined) {
+      console.error("Exchange rate not found for:", toCurr.value);
+      exchangeInfo.innerText = "Invalid currency selected.";
+      return;
+    }
+
+    let finalAmount = exchangeRate * amountValue;
+    exchangeInfo.innerText = `${amountValue} ${
+      fromCurr.value
+    } = ${finalAmount.toFixed(2)} ${toCurr.value}`;
+  } catch (error) {
+    console.error("Error fetching exchange rates:", error);
+    exchangeInfo.innerText = "Error fetching exchange rates.";
+  }
 });
